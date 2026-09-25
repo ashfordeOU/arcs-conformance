@@ -1,0 +1,54 @@
+name: Case defect
+description: A case expects an answer the Agent Run Conformance Specification (ARCS-1) does not require, or its note does not match what it builds.
+title: "Case defect: <case id>"
+labels: ["case defect"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you. A case is a defect when the answer set it accepts is not the one the clause it cites allows, or when its artefacts do not match its note.
+
+        **If the defect lets a wrong implementation pass**, do not file it here: report it privately, as SECURITY.md describes. A false pass is what an attacker would want.
+  - type: input
+    id: case
+    attributes:
+      label: Case identifier
+      description: As `python3 -m arcs_conformance --list` prints it.
+      placeholder: c10-withdrawn
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Suite version
+      description: The output of `python3 -m arcs_conformance --version`.
+      placeholder: arcs-conformance 2.0.0
+    validations:
+      required: true
+  - type: input
+    id: clause
+    attributes:
+      label: The clause of ARCS-1 involved
+      description: Section and step, as the case cites it or as you believe it should (§11 step 6.3 means section 11, step 6.3).
+      placeholder: §11 step 6.3
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What the case accepts, and what ARCS-1 allows
+      description: Quote the case's expected answers (from `--dump` or `--list`) and say which answer the text allows instead, and why. Cite the clause; there is no need to paste long passages of the specification.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: A negative and a positive
+      description: If you can, the smallest artefact that shows the problem, as JSON (JavaScript Object Notation), and its twin that should be treated the other way. The output of `--dump` for the case is a good starting point.
+      render: json
+  - type: textarea
+    id: report
+    attributes:
+      label: What the suite reported
+      description: The case's line from the report, with any detail printed beneath it.
+      render: text

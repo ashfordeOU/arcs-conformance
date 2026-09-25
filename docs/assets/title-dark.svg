@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="204" viewBox="0 0 960 204" role="img">
+<title>ARCS-1 Conformance: the test suite for the Agent Run Conformance Specification (ARCS-1), by Ashforde OÜ (osaühing, an Estonian private limited company), under the Apache License, Version 2.0</title>
+  <style>
+    .mono { font-family: "JetBrains Mono", "IBM Plex Mono", "Menlo", monospace; }
+    .sans { font-family: Poppins, Nunito, "SF Pro Rounded", "Segoe UI", system-ui, -apple-system, sans-serif; }
+  </style>
+<rect width="960" height="204" rx="22" fill="#0a0d1e"/>
+<text class="sans" x="480" y="90" text-anchor="middle" font-size="70" font-weight="800" fill="#edf0fc"><tspan fill="#38bdf8">ARCS-1</tspan> <tspan fill="#8b5cf6">C</tspan><tspan fill="#9a58f6">o</tspan><tspan fill="#a855f7">n</tspan><tspan fill="#c04ef3">f</tspan><tspan fill="#d946ef">o</tspan><tspan fill="#e247c4">r</tspan><tspan fill="#ec4899">m</tspan><tspan fill="#f25e58">a</tspan><tspan fill="#f97316">n</tspan><tspan fill="#f78810">c</tspan><tspan fill="#f59e0b">e</tspan></text>
+<text class="mono" x="480" y="138" text-anchor="middle" font-size="15" fill="#edf0fc" letter-spacing="3">THE AGENT RUN CONFORMANCE SPECIFICATION</text>
+<text class="mono" x="480" y="176" text-anchor="middle" font-size="14" letter-spacing="4"><tspan fill="#38bdf8">TEST SUITE</tspan><tspan fill="#8a93c4" dx="10">·</tspan><tspan fill="#a78bfa" dx="10">BY ASHFORDE OÜ</tspan><tspan fill="#8a93c4" dx="10">·</tspan><tspan fill="#fb923c" dx="10">APACHE-2.0</tspan></text>
+</svg>

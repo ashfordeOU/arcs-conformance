@@ -1,0 +1,58 @@
+name: Report a result
+description: You ran the suite against an implementation and want to say so, publicly.
+title: "Result: <implementation> <version>"
+labels: ["result"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you. This issue is **public**. If you would rather send a result privately, write to contact@ashforde.org instead; it costs nothing either way.
+
+        A result is evidence about the cases the suite ran, not a certification by the maintainer or by anyone. Please include the whole report, not a headline figure: the table of conformance criteria is what a reader needs.
+  - type: input
+    id: implementation
+    attributes:
+      label: Implementation
+      description: Its name and version, and where it can be found.
+    validations:
+      required: true
+  - type: input
+    id: language
+    attributes:
+      label: Language and platform
+      placeholder: Rust 1.80 on Linux
+  - type: input
+    id: adapter
+    attributes:
+      label: Adapter
+      description: Where the adapter's source can be read. A result whose adapter cannot be read cannot be checked.
+    validations:
+      required: true
+  - type: input
+    id: command
+    attributes:
+      label: The command line
+      description: Exactly what you ran.
+      placeholder: python3 -m arcs_conformance --impl './my-adapter' --json report.json
+    validations:
+      required: true
+  - type: textarea
+    id: report
+    attributes:
+      label: The report
+      description: The whole text report, from its first line (suite version, protocol and specification digest) to the closing line.
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything else
+      description: Operations your implementation does not support, readings where it differs from the suite, or anything a reader should know.
+  - type: checkboxes
+    id: publish
+    attributes:
+      label: Publication
+      options:
+        - label: I am entitled to publish this result, and I understand this issue is public.
+          required: true

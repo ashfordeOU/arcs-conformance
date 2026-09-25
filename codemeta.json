@@ -1,0 +1,60 @@
+{
+  "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
+  "@type": "SoftwareSourceCode",
+  "name": "arcs-conformance",
+  "alternateName": "Conformance suite for the Agent Run Conformance Specification (ARCS-1)",
+  "description": "An open conformance test suite for the Agent Run Conformance Specification (ARCS-1), which defines how a conformance record is serialised, identified, signed with Ed25519 (one instance of the Edwards-curve Digital Signature Algorithm), verified and withdrawn. It checks the software that verifies such records, in any language, through a protocol of one JSON (JavaScript Object Notation) request on standard input and one JSON answer on standard output. Every case cites the clause of ARCS-1 it tests, and every conformance criterion is reported on its own. It needs nothing but the Python standard library and no network connection. A pass is evidence about the cases run, not a certification. Published by Ashforde OÜ, a private limited company (osaühing) registered in Estonia.",
+  "version": "2.0.0",
+  "datePublished": "2026-09-24",
+  "license": "https://spdx.org/licenses/Apache-2.0",
+  "codeRepository": "https://github.com/ashfordeOU/arcs-conformance",
+  "issueTracker": "https://github.com/ashfordeOU/arcs-conformance/issues",
+  "url": "https://github.com/ashfordeOU/arcs-conformance",
+  "readme": "https://github.com/ashfordeOU/arcs-conformance/blob/main/README.md",
+  "programmingLanguage": "Python",
+  "runtimePlatform": "Python 3.9 or later",
+  "operatingSystem": [
+    "Linux",
+    "macOS"
+  ],
+  "softwareRequirements": [],
+  "developmentStatus": "active",
+  "keywords": [
+    "conformance testing",
+    "test suite",
+    "ARCS-1",
+    "Agent Run Conformance Specification",
+    "verification",
+    "digital signatures",
+    "Ed25519",
+    "canonical JSON",
+    "status lists"
+  ],
+  "author": [
+    {
+      "@type": "Organization",
+      "name": "Ashforde OÜ",
+      "email": "contact@ashforde.org",
+      "url": "https://ashforde.org",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Ahtri tn 12, Kesklinna linnaosa",
+        "postalCode": "15551",
+        "addressLocality": "Tallinn",
+        "addressRegion": "Harju maakond",
+        "addressCountry": "EE"
+      }
+    }
+  ],
+  "copyrightHolder": {
+    "@type": "Organization",
+    "name": "Ashforde OÜ"
+  },
+  "copyrightYear": 2026,
+  "maintainer": {
+    "@type": "Organization",
+    "name": "Ashforde OÜ",
+    "email": "contact@ashforde.org",
+    "url": "https://ashforde.org"
+  }
+}

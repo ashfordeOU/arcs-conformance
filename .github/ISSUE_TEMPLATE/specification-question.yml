@@ -1,0 +1,45 @@
+name: Specification question
+description: The Agent Run Conformance Specification (ARCS-1) does not settle an answer, and you want to discuss how the suite treats it.
+title: "Specification question: <short description>"
+labels: ["specification question"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The suite never settles a question ARCS-1 leaves open: it records a reading, reports it apart and counts it towards nothing. PROTOCOL.md section 5 lists the questions already known, with what the suite does meanwhile.
+
+        ARCS-1 section 15 treats a passage that cannot be implemented from the text alone as a defect in the specification, to be reported to contact@ashforde.org and corrected in a new edition. This form is for how the **suite** should behave until then.
+  - type: input
+    id: sections
+    attributes:
+      label: Sections of ARCS-1 involved
+      description: As section numbers; §11 step 6.5 means section 11, step 6.5.
+      placeholder: §10, §11 step 6.5
+    validations:
+      required: true
+  - type: input
+    id: listed
+    attributes:
+      label: Is it already in PROTOCOL.md section 5?
+      description: The item number, or "no".
+      placeholder: "no"
+    validations:
+      required: true
+  - type: textarea
+    id: question
+    attributes:
+      label: The question
+      description: What the text leaves open, the answers it could have, and what an implementation would do differently under each.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: What the suite should do meanwhile
+      description: For example, accept either answer in the normative cases and record a reading, or leave the question untested.
+  - type: checkboxes
+    id: reported
+    attributes:
+      label: The specification itself
+      options:
+        - label: I have reported this to contact@ashforde.org as a defect in ARCS-1, or I am content for the maintainer to do so.

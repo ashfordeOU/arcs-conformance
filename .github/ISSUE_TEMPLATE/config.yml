@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Report a security issue privately, by email
+    url: mailto:contact@ashforde.org?subject=SECURITY
+    about: A case that lets a wrong implementation pass, a way to make the suite run something other than the adapter, or a way to grade against a tampered specification unnoticed. Please do not open a public issue for these; write to contact@ashforde.org, as SECURITY.md describes.
+  - name: Report a defect in the Agent Run Conformance Specification (ARCS-1)
+    url: https://github.com/ashfordeOU/arcs-conformance/blob/main/spec/ARCS-1.md#15-defects-in-this-specification
+    about: ARCS-1 section 15 says a defect in the specification is reported to contact@ashforde.org and corrected in a new edition. Use a Specification question here to discuss how the suite treats it meanwhile.
+  - name: Anything else, or anything not for a public tracker
+    url: mailto:contact@ashforde.org
+    about: Write to the maintainer at contact@ashforde.org.

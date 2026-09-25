@@ -1,0 +1,54 @@
+cff-version: 1.2.0
+message: "If you use this conformance suite in your work, please cite the version you ran, as below, together with the digest of the specification it graded against."
+type: software
+title: "arcs-conformance: a conformance suite for the Agent Run Conformance Specification (ARCS-1)"
+abstract: >-
+  A conformance suite for the Agent Run Conformance Specification
+  (ARCS-1), the public specification of how a conformance record in claim@1,
+  the conformance claim format, version 1, is serialised, identified, signed
+  with Ed25519 (one instance of the Edwards-curve Digital Signature
+  Algorithm), verified and withdrawn. The suite tests the software that checks such records. It runs
+  any implementation, in any language, through a small protocol of one JSON
+  (JavaScript Object Notation) request on standard input and one JSON answer
+  on standard output, grades every answer against the clause of ARCS-1 it
+  rests on, and reports every case and every one of the specification's
+  conformance criteria on its own. It reads the specification from a copy
+  checked against the published checksums, builds every artefact from the
+  specification's own worked examples, and needs nothing but the Python
+  standard library. A pass is evidence about the cases run, not a
+  certification. Published and maintained by Ashforde OÜ, a private limited
+  company (osaühing) registered in Estonia, under the Apache License,
+  Version 2.0 (Apache-2.0); the copy of the specification keeps its own
+  terms.
+authors:
+  - name: "Ashforde OÜ"
+    address: "Ahtri tn 12, Kesklinna linnaosa"
+    post-code: "15551"
+    city: "Tallinn"
+    region: "Harju maakond"
+    country: "EE"
+    email: "contact@ashforde.org"
+    website: "https://ashforde.org"
+repository-code: "https://github.com/ashfordeOU/arcs-conformance"
+url: "https://github.com/ashfordeOU/arcs-conformance"
+license: Apache-2.0
+version: "2.0.0"
+date-released: "2026-09-24"
+keywords:
+  - conformance testing
+  - test suite
+  - ARCS-1
+  - Agent Run Conformance Specification
+  - verification
+  - digital signatures
+  - Ed25519
+  - canonical JSON
+  - status lists
+  - Python
+references:
+  - type: standard
+    title: "ARCS-1: the Agent Run Conformance Specification"
+    authors:
+      - name: "Ashforde OÜ"
+    version: "edition 2026-09-24"
+    url: "https://github.com/ashfordeOU/aero-agent-skills/tree/main/spec"

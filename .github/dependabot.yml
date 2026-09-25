@@ -1,0 +1,17 @@
+# Dependabot is the service that proposes updates to the versions a
+# repository pins. The suite has no dependencies outside the Python
+# standard library, so the only thing it watches here is the pinned actions
+# in .github/workflows. One grouped pull request a month; a major release
+# of an action is taken by hand, after reading what changed.
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: monthly
+    groups:
+      actions:
+        patterns: ["*"]
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]

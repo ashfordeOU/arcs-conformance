@@ -1,0 +1,186 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1099" height="588" viewBox="0 0 1099 588" role="img">
+<title>Cases per conformance criterion of the Agent Run Conformance Specification (ARCS-1), C1 to C15: 135 normative cases, split into each criterion's own test in section 12 and cases derived from a requirement stated elsewhere in the text, and 6 readings of open questions that count towards nothing</title>
+  <style>
+    .mono { font-family: "JetBrains Mono", "IBM Plex Mono", "Menlo", monospace; }
+    .sans { font-family: Poppins, Nunito, "SF Pro Rounded", "Segoe UI", system-ui, -apple-system, sans-serif; }
+  </style>
+<rect width="1099" height="588" rx="18" fill="#f6f7fc"/>
+<text class="mono" x="40" y="44" text-anchor="start" font-size="13" fill="#5a6289" letter-spacing="3">CASES PER CRITERION</text>
+<rect x="40" y="62" width="14" height="14" rx="3" fill="#0891b2"/>
+<text class="mono" x="62" y="74" text-anchor="start" font-size="11" fill="#5a6289" letter-spacing="1">OWN TEST IN SECTION 12</text>
+<rect x="265.2" y="62" width="14" height="14" rx="3" fill="#7c3aed"/>
+<text class="mono" x="287.2" y="74" text-anchor="start" font-size="11" fill="#5a6289" letter-spacing="1">DERIVED FROM A REQUIREMENT ELSEWHERE</text>
+<rect x="597.6" y="62.8" width="12.4" height="12.4" rx="3" fill="none" stroke="#ea580c" stroke-width="1.6"/>
+<text class="mono" x="618.8" y="74" text-anchor="start" font-size="11" fill="#5a6289" letter-spacing="1">READING · COUNTS TOWARDS NOTHING</text>
+<text class="mono" x="40" y="123" font-size="12"><tspan fill="#151a33" font-weight="700">C1</tspan> <tspan x="76" fill="#5a6289">Canonical serialisation</tspan></text>
+<rect x="573.6" y="108" width="22" height="18" rx="3" fill="#0891b2"/>
+<rect x="599.6" y="108" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="625.6" y="108" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="651.6" y="108" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="677.6" y="108" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="703.6" y="108" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="729.6" y="108" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="755.6" y="108" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="781.6" y="108" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="807.6" y="108" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="833.6" y="108" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="859.6" y="108" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="886.4" y="108.8" width="20.4" height="18" rx="3" fill="none" stroke="#ea580c" stroke-width="1.6"/>
+<text class="mono" x="919.6" y="122" text-anchor="start" font-size="11.5" fill="#151a33" letter-spacing="1">12 + 1</text>
+<text class="mono" x="40" y="153" font-size="12"><tspan fill="#151a33" font-weight="700">C2</tspan> <tspan x="76" fill="#5a6289">Instants are refused, not normalised</tspan></text>
+<rect x="573.6" y="138" width="22" height="18" rx="3" fill="#0891b2"/>
+<rect x="599.6" y="138" width="22" height="18" rx="3" fill="#0891b2"/>
+<rect x="625.6" y="138" width="22" height="18" rx="3" fill="#0891b2"/>
+<rect x="651.6" y="138" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="677.6" y="138" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="703.6" y="138" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="729.6" y="138" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="755.6" y="138" width="22" height="18" rx="3" fill="#7c3aed"/>
+<text class="mono" x="789.6" y="152" text-anchor="start" font-size="11.5" fill="#151a33" letter-spacing="1">8</text>
+<text class="mono" x="40" y="183" font-size="12"><tspan fill="#151a33" font-weight="700">C3</tspan> <tspan x="76" fill="#5a6289">The record carries exactly the defined fields</tspan></text>
+<rect x="573.6" y="168" width="22" height="18" rx="3" fill="#0891b2"/>
+<rect x="599.6" y="168" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="625.6" y="168" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="651.6" y="168" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="677.6" y="168" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="703.6" y="168" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="729.6" y="168" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="755.6" y="168" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="781.6" y="168" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="807.6" y="168" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="833.6" y="168" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="859.6" y="168" width="22" height="18" rx="3" fill="#7c3aed"/>
+<text class="mono" x="893.6" y="182" text-anchor="start" font-size="11.5" fill="#151a33" letter-spacing="1">12</text>
+<text class="mono" x="40" y="213" font-size="12"><tspan fill="#151a33" font-weight="700">C4</tspan> <tspan x="76" fill="#5a6289">The identifier is derived and recomputable</tspan></text>
+<rect x="573.6" y="198" width="22" height="18" rx="3" fill="#0891b2"/>
+<rect x="599.6" y="198" width="22" height="18" rx="3" fill="#0891b2"/>
+<rect x="625.6" y="198" width="22" height="18" rx="3" fill="#0891b2"/>
+<rect x="651.6" y="198" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="677.6" y="198" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="703.6" y="198" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="729.6" y="198" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="755.6" y="198" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="781.6" y="198" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="807.6" y="198" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="833.6" y="198" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="859.6" y="198" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="885.6" y="198" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="911.6" y="198" width="22" height="18" rx="3" fill="#7c3aed"/>
+<text class="mono" x="945.6" y="212" text-anchor="start" font-size="11.5" fill="#151a33" letter-spacing="1">14</text>
+<text class="mono" x="40" y="243" font-size="12"><tspan fill="#151a33" font-weight="700">C5</tspan> <tspan x="76" fill="#5a6289">A specimen is marked in three places</tspan></text>
+<rect x="573.6" y="228" width="22" height="18" rx="3" fill="#0891b2"/>
+<rect x="599.6" y="228" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="625.6" y="228" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="651.6" y="228" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="677.6" y="228" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="703.6" y="228" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="729.6" y="228" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="755.6" y="228" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="782.4" y="228.8" width="20.4" height="18" rx="3" fill="none" stroke="#ea580c" stroke-width="1.6"/>
+<rect x="808.4" y="228.8" width="20.4" height="18" rx="3" fill="none" stroke="#ea580c" stroke-width="1.6"/>
+<text class="mono" x="841.6" y="242" text-anchor="start" font-size="11.5" fill="#151a33" letter-spacing="1">8 + 2</text>
+<text class="mono" x="40" y="273" font-size="12"><tspan fill="#151a33" font-weight="700">C6</tspan> <tspan x="76" fill="#5a6289">The window is stated and non-empty</tspan></text>
+<rect x="573.6" y="258" width="22" height="18" rx="3" fill="#0891b2"/>
+<rect x="599.6" y="258" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="625.6" y="258" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="651.6" y="258" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="677.6" y="258" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="703.6" y="258" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="729.6" y="258" width="22" height="18" rx="3" fill="#7c3aed"/>
+<text class="mono" x="763.6" y="272" text-anchor="start" font-size="11.5" fill="#151a33" letter-spacing="1">7</text>
+<text class="mono" x="40" y="303" font-size="12"><tspan fill="#151a33" font-weight="700">C7</tspan> <tspan x="76" fill="#5a6289">The body names its own type, and the verifier checks it</tspan></text>
+<rect x="573.6" y="288" width="22" height="18" rx="3" fill="#0891b2"/>
+<rect x="599.6" y="288" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="625.6" y="288" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="651.6" y="288" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="677.6" y="288" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="703.6" y="288" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="729.6" y="288" width="22" height="18" rx="3" fill="#7c3aed"/>
+<text class="mono" x="763.6" y="302" text-anchor="start" font-size="11.5" fill="#151a33" letter-spacing="1">7</text>
+<text class="mono" x="40" y="333" font-size="12"><tspan fill="#151a33" font-weight="700">C8</tspan> <tspan x="76" fill="#5a6289">Verification uses the verifier's anchor, never the record's key</tspan></text>
+<rect x="573.6" y="318" width="22" height="18" rx="3" fill="#0891b2"/>
+<rect x="599.6" y="318" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="625.6" y="318" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="651.6" y="318" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="677.6" y="318" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="703.6" y="318" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="729.6" y="318" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="755.6" y="318" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="781.6" y="318" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="807.6" y="318" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="833.6" y="318" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="859.6" y="318" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="885.6" y="318" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="911.6" y="318" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="937.6" y="318" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="963.6" y="318" width="22" height="18" rx="3" fill="#7c3aed"/>
+<text class="mono" x="997.6" y="332" text-anchor="start" font-size="11.5" fill="#151a33" letter-spacing="1">16</text>
+<text class="mono" x="40" y="363" font-size="12"><tspan fill="#151a33" font-weight="700">C9</tspan> <tspan x="76" fill="#5a6289">An empty anchor cannot produce a pass</tspan></text>
+<rect x="573.6" y="348" width="22" height="18" rx="3" fill="#0891b2"/>
+<rect x="599.6" y="348" width="22" height="18" rx="3" fill="#0891b2"/>
+<rect x="625.6" y="348" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="651.6" y="348" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="677.6" y="348" width="22" height="18" rx="3" fill="#7c3aed"/>
+<text class="mono" x="711.6" y="362" text-anchor="start" font-size="11.5" fill="#151a33" letter-spacing="1">5</text>
+<text class="mono" x="40" y="393" font-size="12"><tspan fill="#151a33" font-weight="700">C10</tspan> <tspan x="76" fill="#5a6289">Standing is resolved from the list, never from the record</tspan></text>
+<rect x="573.6" y="378" width="22" height="18" rx="3" fill="#0891b2"/>
+<rect x="599.6" y="378" width="22" height="18" rx="3" fill="#0891b2"/>
+<rect x="625.6" y="378" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="651.6" y="378" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="677.6" y="378" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="703.6" y="378" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="729.6" y="378" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="756.4" y="378.8" width="20.4" height="18" rx="3" fill="none" stroke="#ea580c" stroke-width="1.6"/>
+<text class="mono" x="789.6" y="392" text-anchor="start" font-size="11.5" fill="#151a33" letter-spacing="1">7 + 1</text>
+<text class="mono" x="40" y="423" font-size="12"><tspan fill="#151a33" font-weight="700">C11</tspan> <tspan x="76" fill="#5a6289">Doubt removes assurance and never launders a finding</tspan></text>
+<rect x="573.6" y="408" width="22" height="18" rx="3" fill="#0891b2"/>
+<rect x="599.6" y="408" width="22" height="18" rx="3" fill="#0891b2"/>
+<rect x="625.6" y="408" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="651.6" y="408" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="677.6" y="408" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="703.6" y="408" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="729.6" y="408" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="755.6" y="408" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="781.6" y="408" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="807.6" y="408" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="833.6" y="408" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="859.6" y="408" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="886.4" y="408.8" width="20.4" height="18" rx="3" fill="none" stroke="#ea580c" stroke-width="1.6"/>
+<text class="mono" x="919.6" y="422" text-anchor="start" font-size="11.5" fill="#151a33" letter-spacing="1">12 + 1</text>
+<text class="mono" x="40" y="453" font-size="12"><tspan fill="#151a33" font-weight="700">C12</tspan> <tspan x="76" fill="#5a6289">One conclusion permits reliance</tspan></text>
+<rect x="573.6" y="438" width="22" height="18" rx="3" fill="#0891b2"/>
+<rect x="599.6" y="438" width="22" height="18" rx="3" fill="#0891b2"/>
+<rect x="625.6" y="438" width="22" height="18" rx="3" fill="#0891b2"/>
+<rect x="651.6" y="438" width="22" height="18" rx="3" fill="#0891b2"/>
+<rect x="677.6" y="438" width="22" height="18" rx="3" fill="#0891b2"/>
+<rect x="703.6" y="438" width="22" height="18" rx="3" fill="#0891b2"/>
+<rect x="729.6" y="438" width="22" height="18" rx="3" fill="#0891b2"/>
+<rect x="755.6" y="438" width="22" height="18" rx="3" fill="#0891b2"/>
+<rect x="781.6" y="438" width="22" height="18" rx="3" fill="#0891b2"/>
+<rect x="807.6" y="438" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="833.6" y="438" width="22" height="18" rx="3" fill="#7c3aed"/>
+<text class="mono" x="867.6" y="452" text-anchor="start" font-size="11.5" fill="#151a33" letter-spacing="1">11</text>
+<text class="mono" x="40" y="483" font-size="12"><tspan fill="#151a33" font-weight="700">C13</tspan> <tspan x="76" fill="#5a6289">A list states its own scope, cut and successor</tspan></text>
+<rect x="573.6" y="468" width="22" height="18" rx="3" fill="#0891b2"/>
+<rect x="599.6" y="468" width="22" height="18" rx="3" fill="#0891b2"/>
+<rect x="625.6" y="468" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="651.6" y="468" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="677.6" y="468" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="703.6" y="468" width="22" height="18" rx="3" fill="#7c3aed"/>
+<text class="mono" x="737.6" y="482" text-anchor="start" font-size="11.5" fill="#151a33" letter-spacing="1">6</text>
+<text class="mono" x="40" y="513" font-size="12"><tspan fill="#151a33" font-weight="700">C14</tspan> <tspan x="76" fill="#5a6289">A finding is never softened or dropped</tspan></text>
+<rect x="573.6" y="498" width="22" height="18" rx="3" fill="#0891b2"/>
+<rect x="599.6" y="498" width="22" height="18" rx="3" fill="#0891b2"/>
+<rect x="625.6" y="498" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="651.6" y="498" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="677.6" y="498" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="703.6" y="498" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="730.4" y="498.8" width="20.4" height="18" rx="3" fill="none" stroke="#ea580c" stroke-width="1.6"/>
+<text class="mono" x="763.6" y="512" text-anchor="start" font-size="11.5" fill="#151a33" letter-spacing="1">6 + 1</text>
+<text class="mono" x="40" y="543" font-size="12"><tspan fill="#151a33" font-weight="700">C15</tspan> <tspan x="76" fill="#5a6289">No clock</tspan></text>
+<rect x="573.6" y="528" width="22" height="18" rx="3" fill="#0891b2"/>
+<rect x="599.6" y="528" width="22" height="18" rx="3" fill="#0891b2"/>
+<rect x="625.6" y="528" width="22" height="18" rx="3" fill="#7c3aed"/>
+<rect x="651.6" y="528" width="22" height="18" rx="3" fill="#7c3aed"/>
+<text class="mono" x="685.6" y="542" text-anchor="start" font-size="11.5" fill="#151a33" letter-spacing="1">4</text>
+</svg>

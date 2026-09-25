@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+# written by CI and by the README's examples, never committed
+reference-report.json
+report.json

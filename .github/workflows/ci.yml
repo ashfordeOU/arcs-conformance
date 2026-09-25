@@ -1,0 +1,68 @@
+# Continuous integration (CI) for the conformance suite of the Agent
+# Run Conformance Specification (ARCS-1): the checks every change must
+# pass, on every Python the README claims. tools/figures.py reads the
+# `python:` entries below to state that claim, so the badge and the statline
+# cannot name a version this workflow does not run. The README's section
+# "How the suite tests itself" says what each step shows, and a test holds
+# that table to the step names below.
+#
+# Every action is pinned to a full commit hash, with the release it was
+# taken from in a comment; Dependabot proposes updates
+# (.github/dependabot.yml). No step reads text an outsider controls, such as
+# an issue or pull request title, and the checkout keeps no credentials.
+
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: Python ${{ matrix.python }} on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-24.04]
+        python: ["3.9", "3.10", "3.11", "3.12", "3.13", "3.14"]
+        include:
+          - os: macos-latest
+            python: "3.14"
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+        with:
+          persist-credentials: false
+
+      - name: Set up Python
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6.3.0
+        with:
+          python-version: ${{ matrix.python }}
+
+      # spec/SHA256SUMS is the checksum file published with the
+      # specification: one digest per file.
+      - name: The copy of ARCS-1 in spec/ is intact
+        working-directory: spec
+        run: shasum -a 256 -c SHA256SUMS
+
+      - name: The suite's own tests
+        run: python -m unittest discover -s tests
+
+      - name: The reference adapter holds every criterion
+        run: python -m arcs_conformance --impl "python reference/adapter.py" --json reference-report.json
+
+      - name: The generated blocks and the images are current
+        run: |
+          python tools/gen_readme.py --check
+          python tools/gen_assets.py --check

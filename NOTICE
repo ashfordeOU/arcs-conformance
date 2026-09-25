@@ -1,0 +1,38 @@
+Conformance suite for the Agent Run Conformance Specification (ARCS-1)
+arcs-conformance
+Copyright 2026 Ashforde OÜ, a private limited company (osaühing) registered
+in Estonia, registry code 17321180, Ahtri tn 12, Kesklinna linnaosa, 15551
+Tallinn, Harju maakond, Estonia. Contact: contact@ashforde.org.
+
+This product is licensed under the Apache License, Version 2.0 (LICENSE).
+LICENSING.md explains in plain language which terms cover which files.
+
+It includes arcs_conformance/ed25519.py, which below its own eleven-line
+header is tools/evidence/ed25519.py from Aero Agent Skills, Ashforde OÜ's
+open library of aerospace engineering skills for artificial intelligence
+(AI) agents (https://github.com/ashfordeOU/aero-agent-skills), unmodified,
+Copyright 2026 Ashforde OÜ, licensed under the Apache License,
+Version 2.0.
+
+The test vectors in tests/test_ed25519.py are those of RFC 8032 (Request
+for Comments 8032, Edwards-Curve Digital Signature Algorithm (EdDSA)),
+section 7.1.
+
+The directory spec/ is not covered by the Apache License. It is a copy of
+the ARCS-1 specification directory published by Ashforde OÜ at
+https://github.com/ashfordeOU/aero-agent-skills/tree/main/spec:
+ARCS-1.md, LICENSE, SHA256SUMS (its checksum file),
+specimen/aero-capability-dossier.json and
+specimen/specimen-trust-anchor.json. Those five files are carried under the
+terms stated in spec/LICENSE and in ARCS-1 section 16, which travel with
+them. ARCS-1 specifies the conformance records issued by the Aero Harness,
+Ashforde OÜ's inspection runtime, which is private and is not part of this
+product.
+
+CODE_OF_CONDUCT.md is adapted from the Contributor Covenant, version 2.1,
+https://www.contributor-covenant.org/version/2/1/code_of_conduct.html,
+which is licensed under the Creative Commons Attribution 4.0 International
+licence (https://creativecommons.org/licenses/by/4.0/).
+
+Neither the Apache License nor the terms of spec/ grant any right to use
+the names "Aero Harness", "ARCS" or "Ashforde", or any mark.

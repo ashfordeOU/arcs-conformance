@@ -1,0 +1,2 @@
+python3 -m unittest discover -s tests -q
+python3 -m arcs_conformance --impl 'python3 reference/adapter.py'

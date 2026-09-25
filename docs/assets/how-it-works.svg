@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1260" height="460" viewBox="0 0 1260 460" role="img">
+<title>How a run works: the suite reads its copy of the Agent Run Conformance Specification (ARCS-1), builds 141 cases from the worked examples in its section 13, sends each to your adapter as one JSON (JavaScript Object Notation) object on standard input, grades the answer your adapter writes on standard output against the clause of ARCS-1 it rests on, and reports every case and every criterion</title>
+  <style>
+    .mono { font-family: "JetBrains Mono", "IBM Plex Mono", "Menlo", monospace; }
+    .sans { font-family: Poppins, Nunito, "SF Pro Rounded", "Segoe UI", system-ui, -apple-system, sans-serif; }
+  </style>
+<rect width="1260" height="460" rx="18" fill="#f6f7fc"/>
+<text class="mono" x="40" y="44" text-anchor="start" font-size="13" fill="#5a6289" letter-spacing="3">HOW A RUN WORKS</text>
+<rect x="40" y="80" width="220" height="170" rx="10" fill="#ffffff" stroke="#7c3aed" stroke-width="1.4"/>
+<text class="mono" x="56" y="108" text-anchor="start" font-size="11" fill="#7c3aed" letter-spacing="2">01</text>
+<text class="mono" x="56" y="132" text-anchor="start" font-size="14" fill="#151a33" font-weight="700" letter-spacing="1">THE SPECIFICATION</text>
+<text class="mono" x="56" y="160" text-anchor="start" font-size="11.5" fill="#5a6289" letter-spacing="1">ARCS-1, COPIED IN SPEC/</text>
+<text class="mono" x="56" y="180" text-anchor="start" font-size="11.5" fill="#5a6289" letter-spacing="1">CHECKSUMS VERIFIED</text>
+<text class="mono" x="56" y="200" text-anchor="start" font-size="11.5" fill="#5a6289" letter-spacing="1">PUBLISHED DIGEST PINNED</text>
+<rect x="320" y="80" width="260" height="170" rx="10" fill="#ffffff" stroke="#0891b2" stroke-width="1.4"/>
+<text class="mono" x="336" y="108" text-anchor="start" font-size="11" fill="#0891b2" letter-spacing="2">02</text>
+<text class="mono" x="336" y="132" text-anchor="start" font-size="14" fill="#151a33" font-weight="700" letter-spacing="1">THE SUITE</text>
+<text class="mono" x="336" y="160" text-anchor="start" font-size="11.5" fill="#5a6289" letter-spacing="1">BUILDS 141 CASES</text>
+<text class="mono" x="336" y="180" text-anchor="start" font-size="11.5" fill="#5a6289" letter-spacing="1">FROM THE SECTION 13 VECTORS</text>
+<text class="mono" x="336" y="200" text-anchor="start" font-size="11.5" fill="#5a6289" letter-spacing="1">GRADES EVERY ANSWER</text>
+<text class="mono" x="336" y="220" text-anchor="start" font-size="11.5" fill="#5a6289" letter-spacing="1">AGAINST ITS CLAUSE</text>
+<rect x="800" y="80" width="210" height="170" rx="10" fill="#ffffff" stroke="#db2777" stroke-width="1.4"/>
+<text class="mono" x="816" y="108" text-anchor="start" font-size="11" fill="#db2777" letter-spacing="2">03</text>
+<text class="mono" x="816" y="132" text-anchor="start" font-size="14" fill="#151a33" font-weight="700" letter-spacing="1">YOUR ADAPTER</text>
+<text class="mono" x="816" y="160" text-anchor="start" font-size="11.5" fill="#5a6289" letter-spacing="1">ANY LANGUAGE</text>
+<text class="mono" x="816" y="180" text-anchor="start" font-size="11.5" fill="#5a6289" letter-spacing="1">ONE PROCESS PER CALL</text>
+<text class="mono" x="816" y="200" text-anchor="start" font-size="11.5" fill="#5a6289" letter-spacing="1">SPEAKS PROTOCOL.MD</text>
+<rect x="1050" y="80" width="175" height="170" rx="10" fill="#ffffff" stroke="#ea580c" stroke-width="1.4"/>
+<text class="mono" x="1066" y="108" text-anchor="start" font-size="11" fill="#ea580c" letter-spacing="2">04</text>
+<text class="mono" x="1066" y="132" text-anchor="start" font-size="14" fill="#151a33" font-weight="700" letter-spacing="1">YOUR VERIFIER</text>
+<text class="mono" x="1066" y="160" text-anchor="start" font-size="11.5" fill="#5a6289" letter-spacing="1">THE IMPLEMENTATION</text>
+<text class="mono" x="1066" y="180" text-anchor="start" font-size="11.5" fill="#5a6289" letter-spacing="1">UNDER TEST</text>
+<rect x="320" y="300" width="690" height="130" rx="10" fill="#ffffff" stroke="#15803d" stroke-width="1.4"/>
+<text class="mono" x="336" y="328" text-anchor="start" font-size="11" fill="#15803d" letter-spacing="2">05</text>
+<text class="mono" x="336" y="352" text-anchor="start" font-size="14" fill="#151a33" font-weight="700" letter-spacing="1">THE REPORT</text>
+<text class="mono" x="336" y="380" text-anchor="start" font-size="11.5" fill="#5a6289" letter-spacing="1">EVERY CASE: PASS · FAIL · ERROR</text>
+<text class="mono" x="336" y="400" text-anchor="start" font-size="11.5" fill="#5a6289" letter-spacing="1">EVERY CRITERION: HOLDS · FAILS · NOT SHOWN · NOT RUN</text>
+<text class="mono" x="336" y="420" text-anchor="start" font-size="11.5" fill="#5a6289" letter-spacing="1">EXIT 0 PASS · 1 FAIL · 2 NOT SHOWN · 3 SUITE ERROR</text>
+<line x1="264" y1="165" x2="316" y2="165" stroke="#151a33" stroke-width="1.6"/>
+<path d="M 316 165 l -10 -5 v 10 Z" fill="#151a33"/>
+<line x1="586" y1="135" x2="794" y2="135" stroke="#151a33" stroke-width="1.6"/>
+<path d="M 794 135 l -10 -5 v 10 Z" fill="#151a33"/>
+<text class="mono" x="690" y="124" text-anchor="middle" font-size="10.5" fill="#5a6289" letter-spacing="1">REQUEST · STANDARD INPUT</text>
+<line x1="794" y1="200" x2="586" y2="200" stroke="#151a33" stroke-width="1.6"/>
+<path d="M 586 200 l 10 -5 v 10 Z" fill="#151a33"/>
+<text class="mono" x="690" y="222" text-anchor="middle" font-size="10.5" fill="#5a6289" letter-spacing="1">ANSWER · STANDARD OUTPUT</text>
+<text class="mono" x="690" y="274" text-anchor="middle" font-size="10.5" fill="#5a6289" letter-spacing="1">ONE JSON OBJECT EACH WAY</text>
+<line x1="1014" y1="165" x2="1046" y2="165" stroke="#151a33" stroke-width="1.6"/>
+<path d="M 1046 165 l -10 -5 v 10 Z" fill="#151a33"/>
+<path d="M 1014 165 l 10 -5 v 10 Z" fill="#151a33"/>
+<line x1="450" y1="254" x2="450" y2="296" stroke="#151a33" stroke-width="1.6"/>
+<path d="M 450 296 l -5 -10 h 10 Z" fill="#151a33"/>
+</svg>
