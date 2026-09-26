@@ -66,9 +66,9 @@ your fork is never read as a result from this suite.
 
 ## `spec/`: the terms of ARCS-1 §16
 
-`spec/` is a byte-for-byte copy of the ARCS-1 specification directory as
-Ashforde OÜ publishes it at
-<https://github.com/ashfordeOU/aero-agent-skills/tree/main/spec>. It is
+`spec/` is the one canonical copy of the ARCS-1 specification directory,
+which Ashforde OÜ publishes here, at
+<https://github.com/ashfordeOU/arcs-conformance/tree/main/spec>, beside the suite that grades against it. It is
 **not** under the Apache License, and the Apache License at the root of
 this repository does not replace its terms. The suite carries it because
 it grades against it, and checks it against its own checksum file,
@@ -125,7 +125,9 @@ copyright assignment; you keep the copyright in your contribution. Each
 contributed commit is signed off under the
 [Developer Certificate of Origin](https://developercertificate.org/)
 (DCO), as [CONTRIBUTING.md](CONTRIBUTING.md) describes. Changes to `spec/` are not
-accepted here, because the specification is published elsewhere.
+accepted as pull requests, because the directory is built from the
+reference implementation's tree and published here unchanged; a defect in
+the specification is reported under ARCS-1 §15.
 
 ## Third-party material
 

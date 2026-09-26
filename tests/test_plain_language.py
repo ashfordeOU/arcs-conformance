@@ -111,6 +111,8 @@ REGISTRY = (
     ("stdlib", r"\bstdlib\b", "standard library"),
     ("stdout", r"\bstdout\b", "standard output"),
     ("SVG", r"\bSVG\b", "Scalable Vector Graphics"),
+    ("TRACE", r"\bTRACE\b",
+     "Trust, Runtime Attestation and Compliance Evidence"),
     ("TSA", r"\bTSA\b", "time-stamping authority"),
     ("URL", r"\bURLs?\b", "Uniform Resource Locator"),
     ("UTC", r"\bUTC\b", "Coordinated Universal Time"),

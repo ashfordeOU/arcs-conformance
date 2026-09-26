@@ -259,7 +259,7 @@ expected answer, as a JSON file per case.
 
 ## 5. Where ARCS-1 leaves the answer open
 
-These are findings about the specification (edition 2026-09-24). §15 says
+These are findings about the specification (edition 2026-09-26). §15 says
 where such findings go; until an edition settles one, each item says what
 the suite does meanwhile.
 

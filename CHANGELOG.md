@@ -16,6 +16,34 @@ the tree.
 
 Nothing yet.
 
+## [2.1.0] — 2026-09-26
+
+ARCS-1 is now the aerospace profile of TRACE (Trust, Runtime Attestation
+and Compliance Evidence), and its one canonical copy lives here. The suite
+grades against edition 2026-09-26 as published, pinned by the SHA-256
+digest (Secure Hash Algorithm, 256-bit) of `ARCS-1.md` (`6d68f8d5d9ea2ec130dacb9c9d2af50cae67008f3a2b77911e5b66f58d05ccec`).
+
+### Changed
+
+- **The specification is a profile, not a standard of its own.** Edition
+  2026-09-26 states that ARCS-1 defers to TRACE for everything TRACE
+  defines, and adds only the gate verdicts, the named person who signs off,
+  and the corpus and harness versions. Its new §17 maps each field of a
+  conformance record onto TRACE's record. §4 to §13, the fifteen criteria
+  and the four worked examples are unchanged, so no case changed and an
+  implementation that passed 2.0.0 passes this release.
+- **The canonical copy.** `spec/` is now the one canonical copy of the
+  specification directory, published here beside the suite rather than in
+  Aero Agent Skills, the open library of aerospace engineering skills,
+  which now carries a pointer to it. The earlier edition's digest
+  stays pinned, so a copy of it is still graded as published.
+
+The suite is unchanged in size: 141 cases in seven operations: 135
+normative cases across the fifteen conformance criteria (C1 to C15) of
+ARCS-1 section 12, and 6 readings. The adapter kept broken on purpose still
+comes with seventeen named defects, and `PROTOCOL.md` section 5 still
+lists twenty-four places the specification leaves open.
+
 ## [2.0.0] — 2026-09-24
 
 The specification is renamed, and the suite with it. It grades against

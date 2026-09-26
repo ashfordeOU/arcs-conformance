@@ -1,50 +1,81 @@
-# ARCS-1 — the Agent Run Conformance Specification
+# ARCS-1 — the aerospace profile of TRACE
 
-ARCS-1 · edition 2026-09-24 · defines `claim@1` · supersedes: edition 2026-09-21
+ARCS-1 · edition 2026-09-26 · defines `claim@1` · supersedes: edition 2026-09-24
+
+ARCS-1 is the Agent Run Conformance Specification, number 1. It is a
+profile of TRACE (Trust, Runtime Attestation and Compliance Evidence), the
+open specification for signed evidence about what a software agent ran,
+where, under which policy and calling which tools. It adds to TRACE only
+what an aerospace assurance case needs and TRACE does not carry.
 
 ---
 
 ## 1. What this document is
+
+**A profile, not a rival.** TRACE defines a Trust Record: one signed
+statement per agent execution, covering the model, the runtime and its
+measurements, the policy in force, the data classification, the tool calls,
+the build provenance, an appraisal of the evidence and a transparency
+receipt. This document does not redefine any of that and does not compete
+with it. Wherever TRACE defines something, TRACE governs, and this document
+defers to the edition of TRACE named in §17.
+
+What an aerospace programme needs beyond that is not evidence about one
+run. It is a claim a reviewer can sign off and an auditor can check years
+later: *these checks ran over exactly this content, this is what each one
+found, this named person accepted it, and it is still in force.* That is
+what this profile adds, and nothing else:
+
+- **the gate verdicts** — which checks ran, over which content, and what
+  each one reported;
+- **the named human signatory and the sign-off stop** — the person who
+  accepted the result, and the rule that nothing is released for use until
+  that person has;
+- **the corpus and harness versions** — the exact knowledge content the
+  agent worked from and the exact harness that checked it, each named by
+  its SHA-256 digest;
+- **standing** — a stated period of validity, and a signed list through
+  which the issuer can later withdraw or supersede a claim.
+
+These are carried in a conformance claim, `claim@1`, which a TRACE Trust
+Record points at. §5 to §13 define the claim; §17 defines how it sits on
+top of TRACE and maps each of its fields onto the Trust Record.
 
 A conformance claim under `claim@1` says: *this runtime, against this
 specification, over these exact corpora, for this period, attested by this
 key.* This document defines what that sentence is made of and how a stranger
 checks it.
 
-It exists because the alternative was a string constant. Until this edition,
-`ARCS-1` was the value of a variable and the subject of a regular expression
-in one module of a private runtime. Two public documents — a README and a
-licence — said the specification was published openly so that an outsider
-could check a conformance claim without asking us. A conformance claim
-against a specification that is not a document is not weak. It is void, and
-the correct thing to do about that is to write the document, not to soften
-the sentence.
-
 **What is normative here.** The serialisation, the record, the identity
 derivation, the context strings, the attestation, the verification
-procedure, the status list, and the fifteen conformance criteria in §12.
-Where this text and any implementation disagree, this text is the
-specification and the implementation has a defect.
+procedure, the status list, the fifteen conformance criteria in §12, and
+the profile requirements in §17. Where this text and any implementation
+disagree, this text is the specification and the implementation has a
+defect.
 
 **What is not.** This document does not define what makes a corpus fit, what
 a gate battery must contain, or what constitutes evidence that an obligation
 was met. Those are the assessment, and the assessment is what Ashforde OÜ
-sells. Specified here is exactly the part a reader must be able to check
-*without us*: whether the document in their hands is intact, authentic,
-in force, and not withdrawn.
+sells. Nor does it restate anything TRACE defines. Specified here is exactly
+the part a reader must be able to check *without us*: whether the claim in
+their hands is intact, authentic, in force, and not withdrawn.
 
 **This is written to be implemented from the text.** Every structure below
 is given as fields and bytes. The reference implementation is named in
 places as an example of a conforming one, never as the definition. Anyone
 who has to read the reference implementation to build a verifier has found
-a defect in this document; §15 says where to send it.
+a defect in this document; §15 says where to send it. Other implementations
+are invited: the conformance suite published with this document (§16) runs
+against any of them, in any language, and reports what it found.
 
-**One honest limitation, stated at the front.** The reference
+**Two honest limitations, stated at the front.** The reference
 implementation is not public. That does not weaken this specification —
 it raises the standard it has to meet, because a reader cannot fall back
 on the source. The conformance criteria in §12 are therefore written as
 tests a stranger can run against artefacts they already hold, using
-nothing but a SHA-256 and an Ed25519 verifier.
+nothing but a SHA-256 and an Ed25519 verifier. And this profile is Ashforde
+OÜ's own: nobody who maintains TRACE has reviewed, accepted or registered
+it, and nothing here should be read as saying they have.
 
 Key words *must*, *must not*, *should* and *may* are used in the sense of
 RFC 2119.
@@ -61,6 +92,7 @@ RFC 2119.
 | **trust anchor** | the set of public keys the *verifier* has decided to trust. Supplied by the verifier. Never by the record |
 | **holder** | anyone in possession of a record |
 | **relying party** | anyone about to act on the strength of one |
+| **Trust Record** | TRACE's signed statement about one agent execution, which can point at a claim. §17 |
 
 The separation that matters most is the last row of the first column. A
 record carries a public key as a convenience, so a reader knows *which* key
@@ -102,6 +134,15 @@ In Python this is
 an hour. The four rules above are the definition.
 
 `SHA(bytes)` is SHA-256, lowercase hexadecimal.
+
+**CANON and RFC 8785.** TRACE canonicalises with RFC 8785, the JSON
+Canonicalization Scheme. For the artefacts defined here the two produce the
+same bytes, with one exception: RFC 8785 orders object keys by 16-bit code
+unit and CANON by code point, so they can disagree on a key holding a
+character outside the Basic Multilingual Plane. Everything in §4 to §13 is
+serialised by CANON, as above. A TRACE Trust Record is serialised by
+RFC 8785, as TRACE requires, and never by CANON. §17 says which rule applies
+to the one digest that crosses between them.
 
 ---
 
@@ -711,6 +752,35 @@ correction reaches holders the way standing does, in a signed list (§10),
 because a record already in somebody's hands cannot be edited without
 ceasing to be the record it was (§6).
 
+### The 2026-09-26 edition: from a standalone specification to a profile of TRACE
+
+The editions before this one presented ARCS-1 as a specification standing
+on its own. It should not be one. TRACE is the open specification for
+signed evidence about agent runs, and it moved to the Linux Foundation on
+2026-08-25; an aerospace claim format that ignored it would ask every
+relying party to learn two unrelated formats for one agent run. This
+edition therefore:
+
+- retitles the document as the aerospace profile of TRACE, and says in §1
+  what TRACE governs and what this profile adds;
+- adds §17: the version of TRACE this profile is written against, how a
+  claim is carried in a Trust Record, where each `claim@1` field sits
+  against the Trust Record, the sign-off stop, and the order of
+  verification;
+- adds a note to §3 on where this document's serialisation and RFC 8785
+  agree, and a row to the table in §2;
+- moves the published location in §16 to the repository of the
+  conformance suite, so that the text and the suite that grades against it
+  travel together. Every other copy is now a pointer to that one.
+
+It changes nothing that conforms to `claim@1`. §4 to §13 — the record, its
+identity, the context strings, the attestation, specimens, standing, the
+verification procedure, the fifteen criteria and the four vectors — are
+unchanged, byte for byte. Every record issued under an earlier edition
+means exactly what it meant, and the name `ARCS-1` and the identifier
+`claim@1` stay as they were. The requirements of §17 are new, and they
+apply to a Trust Record that carries a claim, never to the claim.
+
 ---
 
 ## 15. Defects in this specification
@@ -730,9 +800,11 @@ of what may be done with it. What may be done with this document is in §16.
 ## 16. Where this is published, and on what terms
 
 This document is published at
-<https://github.com/ashfordeOU/aero-agent-skills/tree/main/spec>, with the
-files below beside it. A copy found anywhere else is a copy; `SHA256SUMS`
-says whether it is an intact one.
+<https://github.com/ashfordeOU/arcs-conformance/tree/main/spec>, with the
+files below beside it, in the same repository as the conformance suite
+that grades an implementation against it. That is the one canonical copy.
+Anywhere else, this document is either a pointer to it or a copy, and
+`SHA256SUMS` says whether a copy is an intact one.
 
 | file | what it is |
 | --- | --- |
@@ -756,3 +828,154 @@ covering the repository that happens to carry a copy does not replace
 them. Implementing the specification grants no right to the reference
 implementation, and conformance to it is not certification by
 Ashforde OÜ.
+
+---
+
+## 17. The profile: a claim on top of a TRACE Trust Record
+
+### The version of TRACE this profile is written against
+
+TRACE version 0.2, a draft, whose Trust Record carries the profile
+identifier `tag:agentrust-io.com,2026:trace-v0.2`. It is published at
+<https://github.com/agentrust-io/trace-spec> and hosted at the Linux
+Foundation as a project series of its own. TRACE describes itself as
+pre-ratification, with fields that may change before version 1.0. When a
+later version changes anything this section relies on, the mapping is
+re-read against it and published as a new edition of this document naming
+that version.
+
+Everything below was checked against the TRACE text and its published
+record schema. A TRACE member named here is named as TRACE spells it. Where
+TRACE has no member for something, the table says so rather than inventing
+one.
+
+### What stays TRACE's
+
+The Trust Record and every member of it: `eat_profile`, `iat`, `subject`,
+`model`, `runtime`, `policy`, `data_class`, `tool_transcript`,
+`build_provenance`, `appraisal`, `transparency`, `cnf` and `signature`, and
+the optional `origin`, `references`, `delegation` and `reproducibility`.
+Also its canonical form (RFC 8785), its signature binding, its freshness
+rule, its revocation of record-signing keys, and its verification
+procedure. This profile sets none of their meanings and changes none of
+their rules.
+
+This profile adds **no member** to the Trust Record. TRACE's record schema
+admits no member it does not define, so a profile that added one would
+produce records that no TRACE verifier accepts. Everything this profile
+carries, it carries in the one place TRACE provides for facts outside a
+record: `references`.
+
+### How a claim is carried
+
+A Trust Record carries a `claim@1` record by pointing at it. Each claim is
+one entry in `references`:
+
+| entry member | value under this profile |
+| --- | --- |
+| `rel` | `arcs-1-claim` |
+| `id` | the claim's `record_id` (§6) |
+| `resolver` | the party obliged to keep the claim retrievable: the issuer, unless the engagement names another |
+| `retention` | optional. When present, a period no shorter than the claim's window (§5) |
+| `digest` | `sha256:` followed by the SHA-256 of the complete claim, attestation included, in its RFC 8785 canonical form |
+
+TRACE leaves the form a reference digest is taken over to the relation that
+defines the object. This profile fixes RFC 8785, the form TRACE uses for
+the Trust Record itself and fixes for a `condition-appraisal` object. For a
+claim whose object keys are all in the Basic Multilingual Plane, that
+digest equals `SHA(CANON(claim))` (§3). A claim with a key outside it is
+still identified by §6 and signed by §8 under CANON; only the reference
+digest is taken under RFC 8785.
+
+**Why a relation of its own.** TRACE registers `condition-appraisal` for
+an independent check's finding, and a claim is close to one. It is not one
+as registered: a claim names its condition, ARCS-1, by name and not by
+digest, and its signature covers a context string and a body digest (§8)
+rather than the object itself. So the claim travels under its own relation,
+`arcs-1-claim`. TRACE treats an unregistered relation as legal, and its
+registry suggests registering one when a second implementation has to
+resolve the same object.
+
+**What the pointer does and does not do.** TRACE fixes that a reference is
+a pointer and not evidence. A TRACE verifier does not reject a Trust Record
+because a reference cannot be resolved, and does not treat a resolved one
+as attested evidence. This profile keeps that intact. A claim's authority
+comes from its own attestation (§8), verified under the relying party's own
+anchor (§11), and never from the Trust Record that points at it.
+
+### The gate verdicts
+
+A claim carried under this profile states, in its `provenance`, every gate
+battery that ran for it: what was run, whether it ran, its exit status, and
+every verdict line it printed. The member names are the issuer's. The
+reference implementation writes them as `provenance.gate_battery` and one
+further battery per corpus. `provenance` stays free-form for `claim@1` and
+is never a matching criterion (§5); this requirement belongs to the profile
+and not to the claim.
+
+Gate verdicts are never written into the Trust Record's `appraisal`.
+`appraisal` is a verifier's appraisal of the TRACE evidence, a different
+finding by a different party, and folding one into the other would let a
+green gate battery read as a sound runtime.
+
+### The named human signatory and the sign-off stop
+
+A Trust Record carrying an `arcs-1-claim` entry carries, beside it, an
+entry whose `rel` is `approval-outcome`: TRACE's registered relation for an
+attributable human approval. It points at the acceptance of the claim by a
+named person. The approval's own format belongs to whoever issues it; under
+this profile it must name the person, not only a role or a key, and it must
+name the claim's `record_id` and the instant the person accepted it.
+
+**The stop.** A relying party acting under this profile treats a run whose
+Trust Record carries an `arcs-1-claim` entry and no `approval-outcome`
+entry, or one that does not resolve to an approval naming this claim, as
+stopped at sign-off: not accepted, whatever the claim and the gate verdicts
+say. A gate battery can refuse work. Only a named person can accept it.
+
+### Where each claim field sits against the Trust Record
+
+| `claim@1` field | nearest Trust Record member | how it is carried |
+| --- | --- | --- |
+| `context`, `spec`, `claim` | `eat_profile` names the TRACE version of the Trust Record itself; TRACE has no member naming a profile of it | extension: in the claim. The relation `arcs-1-claim` tells a TRACE reader what the entry is |
+| `record_id` | `references`, entry member `id` | carried |
+| whole claim | `references`, entry member `digest` | carried, as above |
+| `customer` | none | extension: in the claim |
+| `runtime` (the harness version) | `build_provenance`, member `digest`, when the workload the Trust Record describes is the harness | the harness digest is TRACE's; the version string is an extension, in the claim |
+| `corpora` | none. `model`, member `weights_digest`, names model weights and not the knowledge content an agent worked from | extension: in the claim, each corpus by SHA-256 |
+| `issued_at` | `iat` | not the same instant. `iat` is when the Trust Record was issued, in Unix seconds; `issued_at` is when the claim was made, in the form §4 fixes. Neither is derived from the other |
+| `not_before`, `not_after` | none. TRACE's maximum record age bounds how long a Trust Record is accepted, not what period a claim covers | extension: in the claim |
+| `binding_integrity` | none | extension: in the claim |
+| `specimen` | none | extension: in the claim. A Trust Record pointing at a specimen covers no deployment, whatever else it carries (§9) |
+| `provenance`, with the gate verdicts | none. `appraisal` is a different finding, above | extension: in the claim |
+| `attestation` | `cnf` and `signature` sign the Trust Record | not mapped. The claim keeps its own Ed25519 attestation over its own bytes (§8). The Trust Record's signature covers the reference entry, its digest included, and nothing more |
+| the status list (§10) | TRACE's revocation of record-signing keys | not mapped. TRACE revokes keys; the list withdraws or supersedes claims. Both are checked and neither answers for the other |
+| the named signatory | `references`, an entry with `rel` `approval-outcome` | carried, as above |
+
+### Verifying under the profile
+
+A relying party:
+
+1. verifies the Trust Record as TRACE's own verification procedure says;
+2. resolves the `arcs-1-claim` entry and checks the claim's bytes against
+   the entry's `digest`;
+3. verifies the claim under §11, against an anchor of its own choosing;
+4. resolves the `approval-outcome` entry and checks that it names a person,
+   this claim's `record_id`, and an instant;
+5. relies on the run only when the Trust Record verifies, the claim's
+   conclusion is `current`, and the sign-off resolves.
+
+Each result is reported separately and none is folded into another. A TRACE
+verifier that knows nothing of this profile is still correct to accept the
+Trust Record: it has simply not checked the claim.
+
+### Where this profile stands
+
+It is the aerospace profile of TRACE, and at this edition the only one. It
+has a reference implementation, which issues `claim@1` records, and a
+public conformance suite (§16), which grades any implementation against
+§12. Neither yet produces or grades the Trust Record side of this section;
+it is written so that both can be built from the text. The profile is
+Ashforde OÜ's. It has not been reviewed, accepted or registered by anyone
+who maintains TRACE. A second implementation, of either side, is welcome,
+and a defect found while building one is reported as §15 says.

@@ -57,6 +57,8 @@ VECTORS = ("canonical-ordering", "minimal-record", "attestation-payload",
 PUBLISHED = {
     "10e0a328fb3a489f3c65678a708b68fc06bef1c9cdf9e5dc67dbe9c8dfc6d1d8":
         "2026-09-24",
+    "6d68f8d5d9ea2ec130dacb9c9d2af50cae67008f3a2b77911e5b66f58d05ccec":
+        "2026-09-26",
 }
 
 

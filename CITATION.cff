@@ -4,7 +4,9 @@ type: software
 title: "arcs-conformance: a conformance suite for the Agent Run Conformance Specification (ARCS-1)"
 abstract: >-
   A conformance suite for the Agent Run Conformance Specification
-  (ARCS-1), the public specification of how a conformance record in claim@1,
+  (ARCS-1), the aerospace profile of TRACE (Trust, Runtime Attestation and
+  Compliance Evidence), and the public specification of how a conformance
+  record in claim@1,
   the conformance claim format, version 1, is serialised, identified, signed
   with Ed25519 (one instance of the Edwards-curve Digital Signature
   Algorithm), verified and withdrawn. The suite tests the software that checks such records. It runs
@@ -18,8 +20,8 @@ abstract: >-
   standard library. A pass is evidence about the cases run, not a
   certification. Published and maintained by Ashforde OÜ, a private limited
   company (osaühing) registered in Estonia, under the Apache License,
-  Version 2.0 (Apache-2.0); the copy of the specification keeps its own
-  terms.
+  Version 2.0 (Apache-2.0); the specification, whose canonical copy is
+  published in this repository, keeps its own terms.
 authors:
   - name: "Ashforde OÜ"
     address: "Ahtri tn 12, Kesklinna linnaosa"
@@ -32,13 +34,14 @@ authors:
 repository-code: "https://github.com/ashfordeOU/arcs-conformance"
 url: "https://github.com/ashfordeOU/arcs-conformance"
 license: Apache-2.0
-version: "2.0.0"
-date-released: "2026-09-24"
+version: "2.1.0"
+date-released: "2026-09-26"
 keywords:
   - conformance testing
   - test suite
   - ARCS-1
   - Agent Run Conformance Specification
+  - TRACE profile
   - verification
   - digital signatures
   - Ed25519
@@ -47,8 +50,14 @@ keywords:
   - Python
 references:
   - type: standard
-    title: "ARCS-1: the Agent Run Conformance Specification"
+    title: "ARCS-1: the aerospace profile of TRACE"
     authors:
       - name: "Ashforde OÜ"
-    version: "edition 2026-09-24"
-    url: "https://github.com/ashfordeOU/aero-agent-skills/tree/main/spec"
+    version: "edition 2026-09-26"
+    url: "https://github.com/ashfordeOU/arcs-conformance/tree/main/spec"
+  - type: standard
+    title: "TRACE: Trust, Runtime Attestation and Compliance Evidence"
+    authors:
+      - name: "TRACE Specification contributors"
+    version: "0.2"
+    url: "https://github.com/agentrust-io/trace-spec"

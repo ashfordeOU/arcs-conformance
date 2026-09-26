@@ -18,9 +18,9 @@ The test vectors in tests/test_ed25519.py are those of RFC 8032 (Request
 for Comments 8032, Edwards-Curve Digital Signature Algorithm (EdDSA)),
 section 7.1.
 
-The directory spec/ is not covered by the Apache License. It is a copy of
-the ARCS-1 specification directory published by Ashforde OÜ at
-https://github.com/ashfordeOU/aero-agent-skills/tree/main/spec:
+The directory spec/ is not covered by the Apache License. It is the
+canonical copy of the ARCS-1 specification directory, published by
+Ashforde OÜ at https://github.com/ashfordeOU/arcs-conformance/tree/main/spec:
 ARCS-1.md, LICENSE, SHA256SUMS (its checksum file),
 specimen/aero-capability-dossier.json and
 specimen/specimen-trust-anchor.json. Those five files are carried under the

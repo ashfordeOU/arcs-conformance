@@ -9,4 +9,4 @@ nothing about any record, and a pass is not a certification by anyone.
 """
 
 NAME = "arcs-conformance"
-VERSION = "2.0.0"
+VERSION = "2.1.0"

@@ -20,10 +20,21 @@ Glossary section.
 
 **ARCS-1.** The Agent Run Conformance Specification: the public
 document that says how a conformance record is written, identified, signed,
-checked and withdrawn. The number 1 identifies the specification itself: a
-change that altered what conforms would be a different specification,
-ARCS-2, while a correction that only clarifies is a new edition of ARCS-1,
-named by its date (§14).
+checked and withdrawn. It is the aerospace profile of TRACE (Trust, Runtime Attestation and
+Compliance Evidence), below: it
+defers to TRACE for everything TRACE defines, and adds the gate verdicts,
+the named person who signs off, and the exact corpus and harness versions.
+The number 1 identifies the specification itself: a change that altered
+what conforms would be a different specification, ARCS-2, while a
+correction that only clarifies is a new edition of ARCS-1, named by its
+date (§14). Its one canonical copy is in `spec/` in this repository.
+
+**TRACE.** Trust, Runtime Attestation and Compliance Evidence: the open
+specification, hosted at the Linux Foundation, for a signed record of what
+a software agent ran, where, under which policy and calling which tools.
+ARCS-1 is a profile of it, and §17 of ARCS-1 maps each field of a
+conformance record onto TRACE's record. This suite tests verifiers of
+ARCS-1 records; it does not test TRACE records.
 
 **Conformance claim.** The statement a record makes, in the words of §1:
 *this runtime, against this specification, over these exact corpora, for
@@ -105,8 +116,9 @@ that check what the Aero Harness signs.
 
 **Aero Agent Skills.** Ashforde OÜ's open library of aerospace engineering
 skills for artificial intelligence (AI) agents, published at
-<https://github.com/ashfordeOU/aero-agent-skills>. ARCS-1 is published
-there, and the `skills` corpus of the published specimen is that library.
+<https://github.com/ashfordeOU/aero-agent-skills>. It carries a pointer to
+the copy of ARCS-1 in this repository, and the `skills` corpus of the
+published specimen is that library.
 
 **Aero Agent Roles.** Ashforde OÜ's open library of aerospace engineering
 roles, which bind those skills into end-to-end deliverables, published at
@@ -359,7 +371,7 @@ a public file uses one of these before it has spelled it out.
 | ARCS-1 | the first Agent Run Conformance Specification | the specification this suite tests; its editions are named by date |
 | AHD, AHS | no expansion: the prefix of an issued record's identifier and of a status list's identifier | ARCS-1 §6 gives them as prefixes only |
 | Aero Agent Roles | Ashforde OÜ's open library of aerospace engineering roles, which bind skills into end-to-end deliverables | the `roles` corpus of the published specimen |
-| Aero Agent Skills | Ashforde OÜ's open library of aerospace engineering skills for artificial intelligence (AI) agents | where ARCS-1 is published; the `skills` corpus of the published specimen |
+| Aero Agent Skills | Ashforde OÜ's open library of aerospace engineering skills for artificial intelligence (AI) agents | it points to ARCS-1's canonical copy in this repository; the `skills` corpus of the published specimen |
 | Aero Harness | Ashforde OÜ's inspection runtime, which is private | it runs the checks and issues the records ARCS-1 defines |
 | AI | artificial intelligence | |
 | Apache-2.0 | Apache License, Version 2.0 | the licence of the suite's code and documentation |
@@ -390,7 +402,7 @@ a public file uses one of these before it has spelled it out.
 | RFC 3339 | Date and Time on the Internet: Timestamps | the date format ARCS-1 §4 narrows |
 | RFC 6962 | Certificate Transparency | the Merkle-tree log construction the operator records use |
 | RFC 8032 | Edwards-Curve Digital Signature Algorithm (EdDSA) | defines Ed25519; its test vectors check the suite's signature code |
-| RFC 8785 | JSON Canonicalization Scheme | mentioned once in PROTOCOL.md; not the rule ARCS-1 uses |
+| RFC 8785 | JSON Canonicalization Scheme | the canonical form TRACE uses; ARCS-1 §3 says where its own rule agrees with it |
 | SHA | Secure Hash Algorithm | ARCS-1 writes `SHA(bytes)` for the SHA-256 digest |
 | SHA-256 | Secure Hash Algorithm, 256-bit | the hash function ARCS-1 uses throughout |
 | SHA256SUMS | the checksum file of the specification | one SHA-256 digest per file |
@@ -400,6 +412,7 @@ a public file uses one of these before it has spelled it out.
 | stdlib | standard library | |
 | stdout | standard output | |
 | SVG | Scalable Vector Graphics | the format of every image in docs/assets |
+| TRACE | Trust, Runtime Attestation and Compliance Evidence | the open specification ARCS-1 is a profile of |
 | TSA | time-stamping authority | |
 | URL | Uniform Resource Locator, a web address | |
 | UTC | Coordinated Universal Time | |

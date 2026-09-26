@@ -17,7 +17,7 @@
 <!-- /gen:title -->
 
 <p align="center">
-  <strong>The open test suite for the software that checks signed conformance records under the Agent Run Conformance Specification (ARCS-1), published by Ashforde OÜ.</strong><br>
+  <strong>The open test suite for the software that checks signed conformance records under the Agent Run Conformance Specification (ARCS-1), the aerospace profile of TRACE (Trust, Runtime Attestation and Compliance Evidence), published by Ashforde OÜ with ARCS-1's one canonical copy.</strong><br>
   A checker that trusts the key a record carries about itself accepts a forgery with its signature intact. One command, offline and without asking anyone, shows whether yours refuses what the specification says it must. A pass is evidence, never a certification.
 </p>
 
@@ -41,7 +41,7 @@
 <p align="center">
   <a href="https://github.com/ashfordeOU/arcs-conformance/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/ashfordeOU/arcs-conformance/ci.yml?branch=main&label=continuous_integration&style=flat&labelColor=1a1e35" alt="continuous integration (CI) status"></a>
   <a href="https://github.com/ashfordeOU/arcs-conformance/releases"><img src="https://img.shields.io/github/v/release/ashfordeOU/arcs-conformance?label=release&style=flat&labelColor=1a1e35&color=0ea5e9" alt="the latest release, read from the repository"></a>
-  <a href="spec/ARCS-1.md"><img src="https://img.shields.io/badge/specification-ARCS--1_2026--09--24-8b5cf6?style=flat&labelColor=1a1e35" alt="specification: ARCS-1, edition 2026-09-24"></a>
+  <a href="spec/ARCS-1.md"><img src="https://img.shields.io/badge/specification-ARCS--1_2026--09--26-8b5cf6?style=flat&labelColor=1a1e35" alt="specification: ARCS-1, edition 2026-09-26"></a>
   <a href="PROTOCOL.md"><img src="https://img.shields.io/badge/adapter_protocol-v1-ec4899?style=flat&labelColor=1a1e35" alt="adapter protocol arcs-conformance-adapter/1"></a>
   <a href="reference/adapter.py"><img src="https://img.shields.io/badge/reference_adapter-all_15_criteria_hold-2ea043?style=flat&labelColor=1a1e35" alt="the reference adapter: all 15 conformance criteria hold"></a>
 </p>
@@ -68,7 +68,13 @@ document, written in JSON (JavaScript Object Notation), in which an issuer
 states that a named runtime checked named bodies of files, each identified
 by its digest, for a named customer over a stated period. The rules for
 writing, identifying, signing, checking and withdrawing such records are
-public: they are the Agent Run Conformance Specification, ARCS-1.
+public: they are the Agent Run Conformance Specification, ARCS-1, whose
+one canonical copy is in [`spec/`](spec/ARCS-1.md) in this repository.
+ARCS-1 is the aerospace profile of TRACE (Trust, Runtime Attestation and
+Compliance Evidence), the open specification for signed evidence about
+what a software agent ran: it defers to TRACE for everything TRACE defines,
+and adds only what an aerospace claim needs, namely the gate verdicts, the
+named person who signs off, and the exact corpus and harness versions.
 This suite tests the program on the receiving end, the *verifier*, which
 the holder of a record runs to decide whether it can be relied on. It asks
 the verifier questions built from the specification's own worked examples,
@@ -253,8 +259,8 @@ ARCS-1 it rests on:
 <!-- gen:excerpt -->
 ```text
 $ python3 -m arcs_conformance --impl 'python3 reference/adapter.py'
-arcs-conformance 2.0.0, protocol arcs-conformance-adapter/1
-specification: ARCS-1, edition 2026-09-24 (ARCS-1.md sha256 10e0a328fb3a489f3c65678a708b68fc06bef1c9cdf9e5dc67dbe9c8dfc6d1d8, the published text this suite pins)
+arcs-conformance 2.1.0, protocol arcs-conformance-adapter/1
+specification: ARCS-1, edition 2026-09-26 (ARCS-1.md sha256 6d68f8d5d9ea2ec130dacb9c9d2af50cae67008f3a2b77911e5b66f58d05ccec, the published text this suite pins)
 implementation: python3 reference/adapter.py
   describes itself as: arcs-minimal-adapter 1.0.0 (not checked)
 
@@ -687,7 +693,7 @@ Python the badge names:
 | `arcs_conformance/` | the suite: `spec.py` reads and checks the specification copy, `build.py` makes the artefacts, `cases.py` is the catalogue, `runner.py` speaks the protocol and grades, `report.py` reports, `__main__.py` is the command line |
 | `arcs_conformance/ed25519.py` | Ed25519 signing and verification as RFC 8032 defines it, in the Python standard library, vendored unmodified from Aero Agent Skills, Ashforde OÜ's open library of aerospace engineering skills for artificial intelligence (AI) agents ([NOTICE](NOTICE)) |
 | `reference/adapter.py` | the reference adapter: an implementation written from ARCS-1 alone, which passes every case |
-| `spec/` | the copy of ARCS-1 the suite grades against, byte for byte as published, under its own terms ([LICENSING.md](LICENSING.md)) |
+| `spec/` | ARCS-1's one canonical copy, which the suite grades against, under its own terms ([LICENSING.md](LICENSING.md)) |
 | `tests/` | the suite's own tests, described [above](#how-the-suite-tests-itself) |
 | `tools/` | `figures.py` reads every figure from the tree; `gen_readme.py` writes the generated blocks of this page and of PROTOCOL.md, and `gen_assets.py` writes the images |
 | `docs/GLOSSARY.md` | every term of art and every abbreviation, defined in plain words |
@@ -803,7 +809,8 @@ this repository and spells out every abbreviation:
 <!-- gen:glossary -->
 | term | what it means |
 | --- | --- |
-| **ARCS-1** | The Agent Run Conformance Specification: the public document that says how a conformance record is written, identified, signed, checked and withdrawn. The number 1 identifies the specification itself: a change that altered what conforms would be a different specification, ARCS-2, while a correction that only clarifies is a new edition of ARCS-1, named by its date (§14). |
+| **ARCS-1** | The Agent Run Conformance Specification: the public document that says how a conformance record is written, identified, signed, checked and withdrawn. It is the aerospace profile of TRACE (Trust, Runtime Attestation and Compliance Evidence), below: it defers to TRACE for everything TRACE defines, and adds the gate verdicts, the named person who signs off, and the exact corpus and harness versions. The number 1 identifies the specification itself: a change that altered what conforms would be a different specification, ARCS-2, while a correction that only clarifies is a new edition of ARCS-1, named by its date (§14). Its one canonical copy is in `spec/` in this repository. |
+| **TRACE** | Trust, Runtime Attestation and Compliance Evidence: the open specification, hosted at the Linux Foundation, for a signed record of what a software agent ran, where, under which policy and calling which tools. ARCS-1 is a profile of it, and §17 of ARCS-1 maps each field of a conformance record onto TRACE's record. This suite tests verifiers of ARCS-1 records; it does not test TRACE records. |
 | **Conformance claim** | The statement a record makes, in the words of §1: *this runtime, against this specification, over these exact corpora, for this period, attested by this key*. |
 | **Record** | One conformance claim, written as a JSON (JavaScript Object Notation) object with exactly the fields §5 defines, in the claim dialect ARCS-1 names `claim@1`: version 1 of the conformance claim format. The published specimen file calls a record a dossier. |
 | **Issuer** | The party whose key signs a record. ARCS-1 treats the issuer as the key, not as a name: a name in a field is a claim, and a signature is a check (§2). |
@@ -865,13 +872,13 @@ the Citation File Format, from which GitHub offers a *Cite this repository*
 button.
 
 <!-- gen:cite -->
-> Ashforde OÜ (2026). *arcs-conformance: a conformance suite for the Agent Run Conformance Specification (ARCS-1)*, version 2.0.0. https://github.com/ashfordeOU/arcs-conformance
+> Ashforde OÜ (2026). *arcs-conformance: a conformance suite for the Agent Run Conformance Specification (ARCS-1)*, version 2.1.0. https://github.com/ashfordeOU/arcs-conformance
 
 ```bibtex
 @software{arcs_conformance,
   author  = {{Ashforde OÜ}},
   title   = {arcs-conformance: a conformance suite for the Agent Run Conformance Specification (ARCS-1)},
-  version = {2.0.0},
+  version = {2.1.0},
   year    = {2026},
   url     = {https://github.com/ashfordeOU/arcs-conformance},
   license = {Apache-2.0}
@@ -884,10 +891,10 @@ button.
 <!-- gen:versioning -->
 | | |
 | --- | --- |
-| suite | `arcs-conformance` 2.0.0, dated 2026-09-24 in [CHANGELOG.md](CHANGELOG.md) |
+| suite | `arcs-conformance` 2.1.0, dated 2026-09-26 in [CHANGELOG.md](CHANGELOG.md) |
 | adapter protocol | `arcs-conformance-adapter/1` ([PROTOCOL.md](PROTOCOL.md)) |
-| specification | ARCS-1, edition 2026-09-24, as published |
-| SHA-256 of `ARCS-1.md` the suite pins | `10e0a328fb3a489f3c65678a708b68fc06bef1c9cdf9e5dc67dbe9c8dfc6d1d8` |
+| specification | ARCS-1, edition 2026-09-26, as published |
+| SHA-256 of `ARCS-1.md` the suite pins | `6d68f8d5d9ea2ec130dacb9c9d2af50cae67008f3a2b77911e5b66f58d05ccec` |
 | Python | 3.9 to 3.14, each run in CI |
 <!-- /gen:versioning -->
 
@@ -977,7 +984,7 @@ This repository is one of a family. Each connection below is pinned by
 a digest, a signature or a byte-for-byte copy, and a named check goes red
 when a pin breaks.
 
-- **[aero-agent-skills](https://github.com/ashfordeOU/aero-agent-skills)** &mdash; The corpus of leaf skills, the published specification directory and the sealing code
+- **[aero-agent-skills](https://github.com/ashfordeOU/aero-agent-skills)** &mdash; The corpus of leaf skills and the sealing code
 - **[aero-agent-roles](https://github.com/ashfordeOU/aero-agent-roles)** &mdash; The engineering roles and the leaf skills each one binds
 - **[aero-harness-records](https://github.com/ashfordeOU/aero-harness-records)** &mdash; The calibration registry, the dated log of every proof, and the public evidence log
 
@@ -985,12 +992,13 @@ when a pin breaks.
 
 | Between | What flows | Held red by |
 |---|---|---|
-| aero-agent-skills to arcs-conformance | The published specification directory | `conformance-suite-ci` |
+| the runtime (private) to arcs-conformance | The canonical specification directory: the specification, the specimen record and the trust anchor | `gate-spec-mirror`, `conformance-suite-ci` |
+| arcs-conformance to aero-agent-skills | Where the canonical specification lives: named in the related-repositories block, and in a pointer file carrying one edition and its SHA-256 | `gate-family` |
 
 Each connection carries a number in the runtime's own map, used to
 cross-reference it. The numbers are left out here because nothing a
 reader of this page can follow them to.
 
-A glossary of every abbreviation used here is in the specification
-directory that ships beside the corpus.
+Every abbreviation used here is spelled out in the glossary of
+[aero-harness-records](https://github.com/ashfordeOU/aero-harness-records#glossary).
 <!-- family:end -->
